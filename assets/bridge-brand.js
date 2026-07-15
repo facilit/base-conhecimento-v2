@@ -54,9 +54,11 @@
   function saveStored(p){ try { sessionStorage.setItem("__brand_params", JSON.stringify(p)); } catch {} }
   function readStored(){ try { return JSON.parse(sessionStorage.getItem("__brand_params") || "{}"); } catch { return {}; } }
   function buildDesiredHash(p){
-    const u = new URLSearchParams();
-    if (p.brandCode)   u.set("brand", p.brandCode);
-    if (p.brandColor)  u.set("brandColor", p.brandColor);
+    // Parte do hash ATUAL (não de um objeto vazio) para preservar parâmetros
+    // que este script não conhece (ex.: ambiente=, usado pelo client-scope.js).
+    const u = new URLSearchParams(location.hash.replace(/^#/, ""));
+    if (p.brandCode)   u.set("brand", p.brandCode);   else u.delete("brand");
+    if (p.brandColor)  u.set("brandColor", p.brandColor); else u.delete("brandColor");
     return u.toString() ? ("#" + u.toString()) : "";
   }
 
