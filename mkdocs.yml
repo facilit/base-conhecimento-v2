@@ -1,0 +1,209 @@
+site_name: Base de Conhecimentos da Plataforma
+site_url: https://172.19.4.153:8000
+theme:
+  name: material
+  palette:
+    primary: custom
+  language: pt-BR
+  logo: assets/logo_branca.png
+  features:
+    - navigation.path
+    - navigation.top
+extra_css:
+  - stylesheets/access-guard.css
+  - stylesheets/extra.css
+  - assets/chatbot-modal.css
+extra_javascript:
+  - assets/access-guard.js?v=1
+  - assets/bridge-brand.js?v=13
+  - assets/chatbot-modal.js
+  
+extra:
+  generator: false   # 🔹 remove a barra "Made with Material for MkDocs"
+  
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+nav:
+  - "⭐ Novidades":
+    - "Gerar EAP com IA ✨": 2.1.1_Criar_EAP_com_IA.md
+    - "Gerar Ata com IA ✨": 6.2.1_Gerar_Ata_com_IA.md
+    - Gerador de Relatórios e Apresentações: 7.4_Gerador_de_Relatórios_e_Apresentações.md
+    - Gerador de Dashboards: 7.5_Gerador_de_Dashboards.md
+  - "✨ Inteligência Artificial":
+    - Gerar EAP com IA: 2.1.1_Criar_EAP_com_IA.md
+    - Gerar Ata com IA: 6.2.1_Gerar_Ata_com_IA.md
+  - Visão Geral:
+    - Visão Geral: 1.Visão_Geral__brand-target.md
+    - Visão Geral: 1.Visão_Geral__brand-serpro.md
+    - Visão Geral: 1.Visão_Geral__brand-whitelabel.md
+    - Visão Geral: 1.Visão_Geral__brand-planejar.md
+    - Um pouco de história: 1.1_Um_pouco_de_história__brand-planejar.md
+    - Um pouco de história: 1.1_Um_pouco_de_história__brand-serpro.md
+    - Um pouco de história: 1.1_Um_pouco_de_história__brand-target.md
+    - Um pouco de história: 1.1_Um_pouco_de_história__brand-whitelabel.md
+    - A Plataforma: 1.2_A_Plataforma__brand-planejar.md
+    - A Plataforma: 1.2_A_Plataforma__brand-serpro.md
+    - A Plataforma: 1.2_A_Plataforma__brand-target.md
+    - A Plataforma: 1.2_A_Plataforma__brand-whitelabel.md
+    - Estrutura da Plataforma: 1.3_Estrutura_da_Plataforma.md
+    - Reuniões de Monitoramento: 1.4_Reuniões_de_Monitoramento.md
+    - Estrutura de atualização e inclusão das informações: 1.5_Estrutura_de_atualização_e_inclusão_das_informações.md
+    - Glossário: 1.6_Glossário.md
+    - Barra de Navegação: 1.7_Conhecendo_a_barra_de_navegação.md
+    - Central de Notificações: 1.8_Central_de_notificações.md
+    - Minha Página: 1.9_Minha_página.md
+  - Níveis de Informação:
+    - Níveis de Informação: 2_Níveis_de_Informação.md
+    - Criação dos Níveis (N1, N2, N3, N4, N5 e N6): 2.1_Criação_dos_Níveis_(N1,_N2,_N3,_N4,_N5_e_N6).md
+    - Gerar EAP com IA: 2.1.1_Criar_EAP_com_IA.md
+    - Como Editar e Remover Entidades: 2.2_Como_Editar_e_Remover_Entidades.md
+    - Página da Entidade: 3.1_Página_da_Entidade.md
+    - Bloco Detalhado: 3.20_Bloco_Detalhado.md
+    - Canvas: 3.21_Canvas.md
+    - Quadro de Visões: 3.22_Quadro_de_Visões.md
+    - Menu de Ações:
+      - Menu de Ações: 3.2_Menu_de_Ações.md
+      - Mover, Copiar Entidades: 3.2.1_Mover,_Copiar_Entidades.md
+      - Observações, Notas Técnicas: 3.2.2_Observações,_Notas_Técnicas.md
+      - Entidades Vinculadas: 3.2.3_Entidades_Vinculadas.md
+      - Galeria de Imagens: 3.2.4_Galeria_de_Imagens.md
+      - Problemas: 3.4.6_Problemas.md
+    - Envolvidos nos Projetos:
+      - Envolvidos nos Projetos: 3.3_Envolvidos_nos_Projetos.md
+      - Últimas atualizações: 3.4_Últimas_atualizações.md
+      - Repositório de Documentos: 3.4.5_Repositório_de_Documentos.md
+      - Riscos: 3.4.7_Riscos.md
+    - Modelos de Entidades:
+      - Modelos de Entidades: 3.5_Modelos_de_Entidades.md
+      - Criar entidade baseada em template: 3.5.1_Criar_entidade_baseada_em_template.md
+      - Gerenciador de Templates: 3.5.2_Gerenciador_de_Templates.md
+    - Configurações de Datas: 3.6_Configurações_de_Datas.md
+    - Checklist: 3.7_Checklist.md
+    - Importação de entidades: 3.8_Importação_de_entidades.md
+    - Planilhas: 3.9_Planilhas.md
+    - Financeiro: 3.10_Financeiro.md
+    - Imagem mapeada: 3.11_Imagem_mapeada.md
+    - Gantt Sincronizado: 3.12_Gantt_Sincronizado.md
+    - Criando Projetos no Gantt: 3.12.1_Criando_Projetos_no_Gantt.md
+    - Importando Arquivos do Project: 3.12.2_Importando_Arquivos_do_Project.md
+    - Quadro de Projetos - Kanban: 3.13_Quadro_de_Projetos_Kanban.md
+    - Quadro Estratégico: 3.14_Quadro_Estratégico.md
+    - Criar Visões Manualmente no Quadro Estratégico: 3.23_Criar_visões_manualmente.md
+    - Versátil: 3.15_Versátil.md
+    - Bloco Agrupado: 3.16_Bloco_Agrupado.md
+    - Linha de Base: 3.17_Linha_de_base.md
+    - Gráfico de evolução do Projeto: 3.18_Gráfico_de_evolução_do_Projeto.md
+  - Gestão de Indicadores:
+      - Gestão de Indicadores: 5_Gestão_de_Indicadores.md
+      - Gerenciador de Indicadores: 5.1_Gerenciador_de_Indicadores.md
+      - Matriz de Indicadores: 5.2_Matriz_de_Indicadores.md
+      - Indicadores Compostos: 5.4_Indicadores_Compostos.md
+      - Publicador de Indicadores Compostos: 5.3_Publicador_de_indicadores_compostos.md
+      - Como Configurar o Publicador de Indicador Composto: 5.6_Configuração_do_Publicador_de_Indicador_Composto.md
+      - Análise de Desempenho do Indicador: 5.5_Análise_de_Desempenho_do_Indicador.md
+      - Obrigatoridade dos Campos de Análise de Desempenho: 5.11_Obrigatoriedade_de_Campos_na_Análise_de_Desempenho.md
+      - Método de cálculo e polaridade: 5.7_Método_de_cálculo_e_polaridade.md
+      - Indicadores Simples: 5.8_Indicadores_Simples.md
+      - Vincular Indicadores às Entidades: 5.9_Vincular_Indicadores_às_Entidades.md
+      - Editar Indicadores em Massa: 5.10_Editar_indicadores_em_massa.md
+  - Campos Dinâmicos:
+    - Campos Dinâmicos: 3.19_Campos_Dinâmicos.md
+    - Publicador de Campos Dinâmico: 3.19.1_Publicador_de_Campos_Dinâmico.md
+    - Campo Dinâmico tipo Instituição: 3.19.2_Campo_Dinâmico_tipo_instituição.md
+    - Campo Dinâmico do tipo Responsável: 3.19.3_Campo_Dinâmico_do_Tipo_Responsável.md
+  - Reuniões, Apresentações e Encaminhamentos:
+    - Reuniões, Apresentações e Encaminhamentos: 6_Reuniões,_Apresentações_e_Encaminhamentos.md
+    - Apresentações: 6.1_Apresentações.md
+    - Atas de Reunião: 6.2_Atas_de_Reunião.md
+    - Gerar Ata com IA: 6.2.1_Gerar_Ata_com_IA.md
+    - Confirmação de participação na reunião com Justificativa: 6.2.2_Confirmação_de_participação_na_reunião_com_Justificativa.md
+    - Vincular Encaminhamentos na Ata de Reunião: 6.2.3_Vincular_Encaminhamentos_na_Ata_de_Reunião.md
+    - Relatório de Participantes da Reunião: 6.2.4_Relatório_de_Participantes_da_Reunião.md
+    - Encaminhamentos: 6.3_Encaminhamentos.md
+    - Gerenciador de Encaminhamentos: 6.3.2_Gerenciador_de_Encaminhamentos.md
+    - Quadro Kanban de Encaminhamentos: 6.3.3_Quadro_Kanban_de_Encaminhamentos.md
+    - Criação Rápida de Encaminhamento de Mensagem: 6.3.4_Criação_Rápida_de_Encaminhamento_de_Mensagem__brand-target.md
+    - Atribuição de Encaminhamentos a Grupos de Usuários: 6.3.5_Atribuição_de_Encaminhamentos_a_Grupos_de_Usuários__brand-target.md
+    - Criação Rápida de Responsável: 6.3.6_Criação_Rápida_de_Responsável__brand-target.md
+    - Enviar mensagem via WhatsApp ao responsável do Projeto: 6.4_Enviar_mensagem_para_Whatsapp_do_responsável.md
+  - Relatórios e Dashboards:
+    - Relatórios e Dashboards: 7_Relatórios_e_Dashboards.md
+    - Exportação de Entidades: 7.1_Exportação_de_Entidades.md
+    - Gerador de Relatórios e Apresentações: 7.4_Gerador_de_Relatórios_e_Apresentações.md
+    - Gerador de Dashboards: 7.5_Gerador_de_Dashboards.md
+  - Relatórios Gerenciais:
+    - Relatórios Gerenciais: 7.2_Relatórios_Gerenciais.md
+    - Relatório Situacional Detalhado: 7.2.1_Relatório_Situacional_Detalhado.md
+    - Relatório de Log de Permissões de Usuários Geradas a partir dos Grupos para Gestores: 7.2.2_Relatório_de_Log_de_Permissões_de_Usuários_Geradas_a_partir_dos_Grupos_para_Gestores.md
+    - Exportação de Indicadores: 7.3_Exportação_de_Indicadores.md
+    - Dashboard ODS: 7.8_Dashboard_ODS.md
+    - Gestão da Comunicação: 8_Gestão_da_Comunicação.md
+    - Exportar Encaminhamentos: 7.9_Exportaçao_de_encaminhamentos.md
+    - Exportar Usuários: 7.10_Exportar_usuários.md
+  - Geolocalização:
+    - Geolocalização: 9_Geolocalização.md
+    - Localização Geográfica das Entidades: 9.1_Localização_Geográfica_das_Entidades.md
+    - Mapa da Regionalização: 9.2_Mapa_da_Regionalização.md
+  - Administração da Plataforma:
+    - Administração da Plataforma: 10_Administração_da_Plataforma.md
+    - Configuração de Páginas: 10.1_Configuração_de_Páginas.md
+    - Criação de Páginas: 10.1.4_Criação_de_Páginas.md
+    - Configuração de N Abas nas Entidades: 10.1.5_Configuração_de_N_Abas_nas_Entidades.md
+    - Configuração do Portlet de Marco Crítico: 10.1.6_Configuração_do_Portlet_de_Marco_Crítico__brand-target.md
+    - Configuração do Portlet de Metas e Desdobramentos para Agency: 10.1.7_Configuração_do_Portlet_de_Metas_e_Desdobramentos_para_Agency__brand-target.md
+    - Cadastros Auxiliares: 10.2_Cadastros_Auxiliares.md
+    - Criação de Tags: 10.2.1_Criação_de_Tags.md
+    - Importar Responsáveis: 10.2.2_Importar_Responsáveis.md
+    - Card de Instituições com Preview: 10.2.3.1_Card de Instituições com Preview.md
+    - Instituições (departamentos): 10.2.3_Instituições_departamentos.md
+    - Campo Tipo de Instituições: 10.2.6_Adicionar_tipo_no_cadastro_de_Insituição.md
+    - Fontes e Grupos Financeiros: 10.2.4_Fontes e Grupos Financeiros.md
+    - Status / Status Informado: 10.2.5_Status_Status Informado.md
+    - Gestão de Usuários: 10.3_Gestão_de_Usuários.md
+    - Grupos de Usuários: 10.4_Grupos_de_Usuários.md
+    - Permissões: 10.5_Permissões.md
+    - Permissões de Encaminhamentos: 10.5.3_Permissões_de_Encaminhamentos.md
+    - Permissões de Indicadores: 10.5.2_Permissões_de_Indicadores.md
+    - Adicionar permissões em Lote: 10.5.4_Adicionar_permissões_em_Lote.md
+    - Papel Customizado: 10.7_Papel_Customizado.md
+    - Permissão de visualizar e atribuir instituições: 10.7.1_Permissão_de_visualizar_e_atribuir_instituições.md
+    - Configuração de Funcionalidades: 10.8_Configuração_de_Funcionalidades.md
+    - Idioma: 10.11_Idioma.md
+    - Tema: 10.12_Tema.md
+    - Configuração de E-mail: 10.13_Configuração_de_E-mail.md
+    - Modelos de Notificações: 10.14_Modelos_de_Notificações.md
+    - Migração de Ano: 10.15_Migração_de_Ano.md
+    - Acesso Rápido: 10.16_Acesso_Rápido.md
+    - Política de Privacidade: 11.4_Política_de_Privacidade.md
+    - Integrações: 12_Integrações.md
+    - Plataforma x AD (Active Directory): 12.1_Plataforma_x_AD_Active Directory.md
+    - Experiências de Integração realizadas: 12.1.2_Experiências_de_Integração_realizadas.md
+    - Integração com Sistema de Obras: 12.1.3_Integração_com_Sistema_de_Obras.md
+  - Metodologias de Gestão:
+    - Metodologias de Gestão: 13_Metodologias_de_Gestão.md
+    - Projetos: 13.1_Projetos.md
+    - Mapa Estratégico: 13.2_Mapa_Estratégico.md
+    - BSC- Balanced Score Card: 13.3_BSC_-_Balanced_Score_Card.md
+    - Gestão a Vista: 13.4_Gestão_a_Vista.md
+    - KPI- Key Performance Indicator: 13.5_KPI_-_Key_Performance_Indicator.md
+    - OKR- Objectives and Key Results: 13.6_OKR_-_Objectives_and_Key_Results.md
+    - Canvas: 13.7_Canvas.md
+    - Scrum: 13.8_Scrum.md
+    - 5W2H: 13.9_5W2H.md
+    - 5 WHY'S: 13.10_5_WHY'S.md
+    - Mapa Mental: 13.11_Mapa_Mental.md
+    - Kanban: 13.12_Kanban.md
+  - App Android e IOs:
+    - App Android e IOs: 16_Plataforma_App.md
+    - Instalando o App: 11_Aplicativos_Android_e_IOS__brand-serpro.md
+    - Instalando o App: 11_Aplicativos_Android_e_IOS__brand-target.md
+    - Instalando o App: 11_Aplicativos_Android_e_IOS__brand-whitelabel.md
+    - Instalando o App: 11_Aplicativos_Android_e_IOS__brand-planejar.md
+    
+  - Histórias de Sucesso:
+    - Histórias de Sucesso: 15_Como_a_Plataforma_Está_Transformando_a_Gestão_de_Projetos.md
+    - Monitora Bahia: 15.1_Monitora_Bahia.md
+    - Depoimento sobre o Monitora Bahia: 15.2_Depoimento_sobre_o_Monitora_Bahia.md
+    - Saiu na Globo: 15.3_Saiu_na_Globo.md
