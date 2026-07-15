@@ -25,39 +25,3 @@
   display: block;     /* força bloco e elimina espaço inline */
 }
 
-/* ===========================================================
-   Responsividade do menu lateral (esquerdo)
-   Por padrão o Material só exibe o menu lateral fixo a partir de
-   76.25em (~1220px); abaixo disso ele vira uma gaveta (drawer)
-   acessível pelo ícone de hambúrguer. Em janelas/iframes um pouco
-   mais estreitos que isso (ex.: portlet do Target em zoom 100%),
-   o menu ficava escondido sem necessidade. Este bloco antecipa o
-   comportamento "desktop" a partir de 60em (~960px).
-   =========================================================== */
-@media screen and (min-width: 60em) and (max-width: 76.24em) {
-  .md-header__button[for="__drawer"] {
-    display: none;
-  }
-
-  .md-sidebar--primary {
-    position: sticky;
-    top: 2.4rem;
-    height: auto;
-    transform: none !important;
-    box-shadow: none;
-    background-color: transparent;
-  }
-
-  .md-sidebar--primary .md-sidebar__scrollwrap {
-    position: static;
-    height: auto;
-    overflow: visible;
-    margin: 0;
-  }
-
-  .md-content__inner {
-    margin-left: 1.2rem;
-  }
-}
-
-
