@@ -25,3 +25,14 @@
   display: block;     /* força bloco e elimina espaço inline */
 }
 
+/* Esconde visualmente a barra de rolagem interna do menu lateral esquerdo e
+   do TOC direito (mantém o scroll funcional via mouse/toque, só some a barra). */
+.md-sidebar__scrollwrap {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* Edge legado */
+}
+
+.md-sidebar__scrollwrap::-webkit-scrollbar {
+  display: none;              /* Chrome/Safari/Edge novo */
+}
+
