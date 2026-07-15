@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Teste wrapper (simula portlet)</title></head>
+<body style="margin:0;font-family:sans-serif">
+  <p>Simulando o portlet com auto-resize via postMessage:</p>
+  <div id="bc-status">Carregando...</div>
+  <iframe id="bc-iframe" style="width:100%;border:0;display:block;min-height:200px" src="https://facilit.github.io/base-conhecimento-v2/1.Vis%C3%A3o_Geral__brand-target/"></iframe>
+  <p>Fim da página de teste (se aparecer isso sem precisar rolar dentro do iframe, funcionou).</p>
+  <script>
+    window.addEventListener('message', function (event) {
+      if (event.origin !== 'https://facilit.github.io') return;
+      if (!event.data || event.data.type !== 'bc-resize') return;
+      var iframe = document.getElementById('bc-iframe');
+      if (iframe) iframe.style.height = event.data.height + 'px';
+      document.getElementById('bc-status').textContent = 'Altura recebida: ' + event.data.height + 'px';
+    });
+  </script>
+</body>
+</html>
