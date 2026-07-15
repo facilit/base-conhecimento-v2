@@ -51,8 +51,7 @@
     };
   }
 
-  function getClienteCode(referrerHost, debugCliente) {
-    if (isLocalDev && debugCliente) return debugCliente;
+  function getClienteCodeFromHost(referrerHost) {
     if (!referrerHost) return null;
     for (var i = 0; i < KNOWN_BASE_DOMAINS.length; i++) {
       var base = KNOWN_BASE_DOMAINS[i];
@@ -65,9 +64,43 @@
     return null;
   }
 
+  // Navegações dentro do iframe (clicar num artigo) são páginas novas de verdade:
+  // o document.referrer delas passa a ser a página anterior do PRÓPRIO site, não
+  // mais o domínio do Target. Por isso guardamos na sessionStorage (por aba) o
+  // último cliente/ambiente detectados com sucesso, e reaproveitamos isso quando
+  // o referrer não ajudar mais (mesma estratégia do access-guard.js).
+  var STORAGE_KEY = 'clientScope_ctx';
+
+  function readStoredContext() {
+    try {
+      return JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '{}');
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function storeContext(ctx) {
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(ctx));
+    } catch (e) {
+      // sessionStorage indisponível (ex.: modo privado bloqueando storage) — sem persistência entre páginas.
+    }
+  }
+
   var params = getParams();
-  var CLIENTE = getClienteCode(getReferrerHost(), params.debugCliente);
-  var AMBIENTE = params.ambienteId;
+  var stored = readStoredContext();
+
+  var clienteFromReferrer = (isLocalDev && params.debugCliente)
+    ? params.debugCliente
+    : getClienteCodeFromHost(getReferrerHost());
+
+  var CLIENTE = clienteFromReferrer || stored.cliente || null;
+  var AMBIENTE = params.ambienteId || stored.ambiente || null;
+
+  // Só grava de novo se veio algo novo/válido desta carga (evita sobrescrever com null).
+  if (clienteFromReferrer || params.ambienteId) {
+    storeContext({ cliente: CLIENTE, ambiente: AMBIENTE });
+  }
 
   function pageKeyFromHref(href) {
     try {
