@@ -33,12 +33,31 @@
     return BRANDS[c] || BRANDS.target;
   }
 
+  // ======= detecção automática do brand pelo host de origem (referrer) =======
+  // Só é usada quando ninguém passou #brand= explicitamente (ex.: 1ª carga vinda
+  // do portlet sem o parâmetro). Em navegações internas o brand já vem explícito
+  // no link (propagado via decorateInternalLinks), então isso nunca sobrescreve
+  // um brand já resolvido.
+  function getReferrerHost(){
+    if (!document.referrer) return "";
+    try { return new URL(document.referrer).hostname.toLowerCase(); } catch { return ""; }
+  }
+  function detectBrandFromReferrer(){
+    const host = getReferrerHost();
+    if (!host) return "whitelabel";
+    // Planejar é mais específico (sempre Paraná) — checar antes do genérico "target".
+    if (host.indexOf("planejar.pr.gov.br") !== -1) return "planejar";
+    if (host.indexOf("target") !== -1) return "target";
+    if (host.indexOf("serpro") !== -1) return "serprovisao";
+    return "whitelabel"; // fallback mais seguro: sem nome de plataforma nenhum
+  }
+
   // ======= leitura de parâmetros (hash tem prioridade), + kill-switch =======
   function getParams(){
     const h = new URLSearchParams(location.hash.replace(/^#/, ""));
     const q = new URLSearchParams(location.search);
     const pick = k => h.get(k) ?? q.get(k);
-    const brandRaw = (pick("brand") || "").toLowerCase();
+    const brandRaw = (pick("brand") || "").toLowerCase() || detectBrandFromReferrer();
     const colorRaw = pick("brandColor");
     const noBrand  = (pick("noBrand") || "") === "1";
     return {
