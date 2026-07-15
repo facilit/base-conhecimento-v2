@@ -6168,8 +6168,9 @@
 <ol>
 <li>Se pelo menos uma entidade filha estiver <strong>Atrasada</strong>, a entidade pai também aparece como <strong>Atrasada</strong>, mesmo que outras filhas estejam concluídas ou em andamento.</li>
 <li>Não havendo nenhuma filha atrasada, se pelo menos uma estiver <strong>Em andamento</strong>, a entidade pai aparece como <strong>Em andamento</strong>.</li>
-<li>A entidade pai só aparece como <strong>Concluída</strong> quando todas as suas entidades filhas estiverem concluídas.</li>
-<li>Enquanto nenhuma filha tiver datas realizadas, a entidade pai permanece como <strong>A iniciar</strong>.</li>
+<li>Também aparece como <strong>Em andamento</strong> quando há uma mistura de filhas <strong>Concluídas</strong> e <strong>A iniciar</strong> (sem nenhuma Atrasada ou Em andamento) — ou seja, parte da estrutura já foi concluída e parte ainda não começou, o que caracteriza um progresso parcial.</li>
+<li>A entidade pai só aparece como <strong>Concluída</strong> quando <strong>todas</strong> as suas entidades filhas estiverem concluídas.</li>
+<li>Enquanto todas as filhas estiverem <strong>A iniciar</strong> (nenhuma com datas realizadas), a entidade pai permanece como <strong>A iniciar</strong>.</li>
 </ol>
 <p>Ou seja, o status mais crítico entre as entidades filhas é sempre o que prevalece no nível acima, permitindo identificar rapidamente, ao olhar um nível superior, se existe algum atraso em algum ponto da estrutura abaixo dele.</p>
 <h3 id="como-personalizar-os-status-automaticos">Como personalizar os status automáticos:</h3>

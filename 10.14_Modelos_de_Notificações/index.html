@@ -4697,6 +4697,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelos de Notificações
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -4713,6 +4731,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#como-configurar-os-alertas-de-prazo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como configurar os Alertas de Prazo
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -5747,6 +5795,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#como-configurar-os-alertas-de-prazo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como configurar os Alertas de Prazo
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5770,6 +5837,11 @@
 
 <h1 id="modelos-de-notificacoes">Modelos de Notificações</h1>
 <p>A partir dos modelos de notificação é possível fazer modificações nas mensagens automáticas que a plataforma envia por e-mail:</p>
+<p style="text-align: justify;">Cada tipo de notificação (por exemplo, criação de encaminhamento, convite de reunião, criação de conta) já vem com um texto padrão pronto na ferramenta, mas esse texto pode ser editado. O texto utiliza <strong>termos entre colchetes</strong> (chaves de definição, como o nome do destinatário, a data prevista, o tipo da entidade, a URL de acesso, entre outros) que são substituídos automaticamente pela informação real no momento do envio. Para incluir alguma informação adicional no texto, é necessário usar a chave de definição correspondente — não é possível simplesmente escrever o valor fixo, pois ele muda a cada envio.</p>
+
+<blockquote>
+<p>⚠️ <strong>Atenção:</strong> qualquer alteração feita em um modelo de notificação é uma mudança <strong>global</strong> — ela passa a valer para <strong>todas</strong> as notificações futuras daquele tipo, e não apenas para um caso específico. Não existe a opção de customizar o texto por entidade ou por ocorrência isolada.</p>
+</blockquote>
 <p><strong>ENCAMINHAMENTOS:</strong></p>
 <p>Criação de encaminhamento</p>
 <p><img width="1566" height="1006" alt="image" src="https://github.com/user-attachments/assets/77bddef3-b783-4bcb-ad5a-f5eb3a04569c" /></p>
@@ -5790,6 +5862,21 @@
 <p>E-mail de prazo de indicador expirando</p>
 <p>E-mail de prazo de indicador a expirar</p>
 <p>E-mail de prazo de indicador expirado</p>
+<h2 id="como-configurar-os-alertas-de-prazo">Como configurar os Alertas de Prazo</h2>
+<p style="text-align: justify;">Diferente dos demais modelos (que apenas têm o texto customizável), o Alerta de Prazo exige a criação de uma <strong>regra</strong> própria, definindo quando e para quem o e-mail deve ser disparado. A configuração fica na opção de administração de <strong>Alertas de Prazo</strong>, em "Adicionar novo alerta".</p>
+
+<p>Ao criar um alerta, é preciso definir:</p>
+<ul>
+<li><strong>Para quê o alerta vale</strong>: um nível de informação específico (N1 a N6) ou um indicador.</li>
+<li><strong>A regra de data</strong>: quantos dias antes ou depois de uma data de referência o alerta deve disparar.</li>
+<li><strong>D + (mais)</strong>: dispara <em>depois</em> da data de referência (ex.: "expirado há 2 dias").</li>
+<li><strong>D - (menos)</strong>: dispara <em>antes</em> da data de referência (ex.: "expira em 3 dias").</li>
+<li>A data de referência é sempre uma data <strong>prevista</strong> (nunca a data realizada — não faria sentido alertar sobre algo que já aconteceu). Por padrão, a referência é a data de término previsto, mas também é possível selecionar a data de início previsto como referência (essa opção de escolha é recente; anteriormente só era possível configurar em relação ao término previsto).</li>
+<li><strong>Quem recebe a notificação</strong>: por padrão, o responsável pelo nível ou indicador. Também é possível notificar adicionalmente o consultor/analista relacionado ou um e-mail avulso digitado manualmente.</li>
+</ul>
+<p style="text-align: justify;">Um mesmo alerta pode ter <strong>múltiplas regras</strong> (por exemplo, avisar 15 dias antes e novamente 5 dias antes do prazo) — basta usar a opção de adicionar regra quantas vezes for necessário antes de salvar. Já para criar um alerta para um nível ou indicador diferente, é necessário cadastrar um novo alerta separado, um para cada nível/indicador desejado.</p>
+
+<p>O texto de cada notificação de alerta também pode ser customizado usando os termos de definição entre colchetes, da mesma forma que os demais modelos de notificação.</p>
 
 
 
