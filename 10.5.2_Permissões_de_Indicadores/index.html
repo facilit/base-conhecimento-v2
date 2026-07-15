@@ -4542,6 +4542,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#granularidade-das-permissoes-especificas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Granularidade das permissões específicas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#atencao-instituicao-do-indicador-x-instituicao-da-entidade-vinculada" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5851,6 +5862,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#granularidade-das-permissoes-especificas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Granularidade das permissões específicas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#atencao-instituicao-do-indicador-x-instituicao-da-entidade-vinculada" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6006,7 +6028,20 @@ Essa configuração pode ser realizada de duas formas: geral, afetando todos os 
 </ul>
 <p><strong>Exemplo prático</strong></p>
 <p>Miguel é um Visualizador e, por padrão, não pode atualizar nenhum indicador. Porém, ao configurar permissões específicas para ele em um indicador A, é possível permitir que ele atualize apenas esse indicador, mantendo a restrição nos demais.</p>
+<p>Não há limite para a quantidade de indicadores que podem ser selecionados em uma mesma permissão específica — é possível vincular quantos forem necessários a um único perfil/usuário.</p>
 <p>Após realizar as configurações, clique em <strong>Salvar</strong>.</p>
+<h3 id="granularidade-das-permissoes-especificas">Granularidade das permissões específicas</h3>
+<p>Ao configurar uma permissão específica, além das ações gerais (adicionar, visualizar, atualizar, apagar, copiar e editar valores fora da data limite), é possível detalhar exatamente quais campos do indicador o perfil pode visualizar ou editar, entre eles:</p>
+<ul>
+<li>Ativo/inativo do indicador;</li>
+<li>Instituição e objetivo/programa vinculados;</li>
+<li>Tabela de medição (valores) e dias-limite de preenchimento;</li>
+<li>Justificativa, memória de cálculo, agrupador, unidade de medida, responsável, fonte de dados, tags e tipo;</li>
+<li>Meta, valor realizado, peso e polaridade;</li>
+<li>Nota (incluindo anexar arquivo);</li>
+<li>Desdobramento do indicador para as entidades filhas.</li>
+</ul>
+<p>Se um campo não for marcado, ele fica bloqueado para edição para aquele perfil, mesmo que outras ações estejam liberadas — cada campo é controlado de forma independente.</p>
 <h3 id="atencao-instituicao-do-indicador-x-instituicao-da-entidade-vinculada">Atenção: instituição do indicador x instituição da entidade vinculada</h3>
 <p style="text-align: justify;">Para perfis restritos a uma instituição (Gestor Secretaria/Administrador de Instituição e Visualizador Secretaria/Visualizador de Instituição), a visibilidade de um indicador depende do campo de <strong>Instituição preenchido no próprio cadastro do indicador</strong>, e não apenas da instituição da entidade à qual ele está vinculado. Ou seja, mesmo que o indicador esteja relacionado a uma entidade da instituição correta, se o campo de instituição do indicador estiver preenchido com outra instituição (ou não preenchido), ele não aparecerá para o usuário restrito àquela instituição. Por isso, é importante garantir que ambos os campos — instituição do indicador e entidade vinculada — estejam preenchidos corretamente e de forma coerente.</p>
 

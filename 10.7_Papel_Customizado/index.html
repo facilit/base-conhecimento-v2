@@ -6082,6 +6082,7 @@
 </ul>
 <p>Você também pode configurar se o usuário poderá <strong>gerenciar dados específicos de projetos</strong>, como status, instituição e datas — e se essas permissões se aplicam a <strong>todos os níveis de informação</strong> ou apenas a alguns (por exemplo: apenas nos níveis 1, 2 e 3).</p>
 <blockquote>
+<p>⚠️ <strong>O perfil customizado funciona no modelo "restringe tudo por padrão"</strong>: qualquer funcionalidade que não for explicitamente marcada fica bloqueada para quem tiver apenas esse perfil. Ou seja, não basta liberar a visualização de um nível (em Gerenciamento) para que o usuário veja as informações — também é preciso indicar, dentro de cada nível, o que ele pode visualizar ou editar (status, datas, responsável, tags, etc.). Por isso, ao criar um perfil do zero, é comum que o usuário não veja nada até que as permissões desejadas sejam marcadas uma a uma.</p>
 <p>💡 Dica: configure com atenção para evitar que permissões concedidas em um nível sobreponham restrições em outro.</p>
 </blockquote>
 <h3 id="4-salve-o-perfil">4. Salve o perfil</h3>
@@ -6099,6 +6100,8 @@
 <li>✅ <strong>Um mesmo usuário pode ter mais de um perfil customizado</strong>, desde que as permissões não entrem em conflito. Sempre prevalecerá o perfil com <strong>maior nível de permissão</strong>.</li>
 <li>🔒 <strong>Não há limite de perfis customizados</strong> que podem ser criados.</li>
 <li>🧩 A lista de permissões disponíveis é ampla e adaptável à realidade de cada cliente.</li>
+<li>♾️ <strong>Não há limite para a quantidade de entidades, instituições ou indicadores</strong> que podem ser vinculados a uma mesma atribuição de permissão (por exemplo, um Gestor de Entidade pode ser vinculado a vários níveis/entidades ao mesmo tempo, e um Administrador de Instituição a várias instituições).</li>
+<li>👤 <strong>Um usuário com o papel nativo Administrador Plataforma não é afetado por restrições de perfis customizados ou de grupos</strong> aos quais venha a pertencer — por já possuir o maior nível de permissão da Plataforma, essas restrições simplesmente não se aplicam a ele. Isso é útil de lembrar ao testar um perfil customizado: se o teste for feito com um usuário Administrador Plataforma que ainda tenha esse papel atribuído (mesmo que também esteja em um grupo restritivo), ele continuará enxergando tudo normalmente.</li>
 </ul>
 <hr />
 <p>Pronto! Agora você já sabe como criar e aplicar perfis customizados de acesso na Plataforma.</p>
