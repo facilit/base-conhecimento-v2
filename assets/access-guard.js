@@ -18,6 +18,29 @@
   }
   // ---------------------------------------------------------------------
 
+  // Navegações dentro do iframe (clicar num artigo) são páginas novas de verdade:
+  // o document.referrer delas passa a ser a página anterior do PRÓPRIO site, não
+  // mais a URL do Target. Por isso, guardamos na sessionStorage (por aba/sessão)
+  // que o referrer já foi validado uma vez, e reaproveitamos isso nas navegações
+  // seguintes — sempre exigindo continuar dentro de um iframe.
+  var SESSION_FLAG = 'accessGuardVerified';
+
+  function isSessionVerified() {
+    try {
+      return sessionStorage.getItem(SESSION_FLAG) === '1';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function markSessionVerified() {
+    try {
+      sessionStorage.setItem(SESSION_FLAG, '1');
+    } catch (e) {
+      // sessionStorage indisponível (ex.: modo privado bloqueando storage) — sem persistência entre páginas.
+    }
+  }
+
   function log(msg) {
     console.log(LOG_PREFIX + ' ' + msg);
   }
@@ -86,10 +109,16 @@
     return;
   }
 
-  if (!referrerHost || !hostMatches(referrerHost, ALLOWED_REFERRER_HOSTS)) {
-    blockAccess('referrer ausente ou não autorizado: ' + referrerHost);
+  if (referrerHost && hostMatches(referrerHost, ALLOWED_REFERRER_HOSTS)) {
+    markSessionVerified();
+    grantAccess('iframe com referrer autorizado: ' + referrerHost);
     return;
   }
 
-  grantAccess('iframe com referrer autorizado: ' + referrerHost);
+  if (isSessionVerified()) {
+    grantAccess('iframe já validado nesta sessão (navegação interna)');
+    return;
+  }
+
+  blockAccess('referrer ausente ou não autorizado: ' + referrerHost);
 })();
