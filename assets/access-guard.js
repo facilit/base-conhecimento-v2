@@ -61,8 +61,7 @@
         '<div class="access-blocked-screen">' +
         '  <div class="access-blocked-card">' +
         '    <h1>Acesso restrito</h1>' +
-        '    <p>Esta página só pode ser acessada de dentro da Plataforma. ' +
-        '    Acesse pelo atalho disponível na sua área de trabalho.</p>' +
+        '    <p>Esta página só pode ser acessada de dentro da Plataforma.</p>' +
         '  </div>' +
         '</div>';
     };
